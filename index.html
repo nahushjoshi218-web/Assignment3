@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <h2>User Registration</h2>
+
+    <form onsubmit="return val()">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+        <span id="e1"></span>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span id="e2"></span>
+        <br><br>
+
+        <label>Phone:</label>
+        <input type="text" id="phone">
+        <span id="e3"></span>
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="pass">
+        <span id="e4"></span>
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <script>
+        function val() {
+
+            let n = document.getElementById("name").value;
+            let e = document.getElementById("email").value;
+            let p = document.getElementById("phone").value;
+            let pw = document.getElementById("pass").value;
+
+            let ok = true;
+
+            document.getElementById("e1").innerText = "";
+            document.getElementById("e2").innerText = "";
+            document.getElementById("e3").innerText = "";
+            document.getElementById("e4").innerText = "";
+
+            if (n == "") {
+                document.getElementById("e1").innerText = " Enter name";
+                ok = false;
+            }
+
+            if (!e.includes("@")) {
+                document.getElementById("e2").innerText = " Enter valid email";
+                ok = false;
+            }
+
+            if (p.length != 10 || isNaN(p)) {
+                document.getElementById("e3").innerText = " Enter 10 digit phone";
+                ok = false;
+            }
+
+            if (pw.length < 6) {
+                document.getElementById("e4").innerText =
+                    " Password must have 6 characters";
+                ok = false;
+            }
+
+            if (ok) {
+                alert("Registration successful");
+            }
+
+            return ok;
+        }
+    </script>
+
+</body>
+</html>
