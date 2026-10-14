@@ -11,6 +11,3 @@ To validate user registration form inputs using JavaScript.
 
 ## Technologies
 HTML, CSS, JavaScript
-
-## How to Run
-Open `index.html` in a web browser.
